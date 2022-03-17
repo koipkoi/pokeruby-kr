@@ -636,11 +636,7 @@ u8 *sub_80BC190(u8 *dest, u8 arg1)
     str = StringCopyN(dest, gSaveBlock1.secretBases[arg1].playerName, local1);
     str[0] = EOS;
 
-#if ENGLISH
     return StringAppend(dest, gOtherText_PlayersBase);
-#elif GERMAN
-    return de_sub_8073174(dest, gOtherText_PlayersBase);
-#endif
 }
 
 u8 *GetSecretBaseMapName(u8 *dest)

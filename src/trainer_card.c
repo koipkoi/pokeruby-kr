@@ -1220,13 +1220,7 @@ static void TrainerCard_Back_PrintName(void)
     str = gStringVar1;
     StringCopy(str, gTrainerCardPtr->displayedCard.playerName);
     ConvertInternationalString(str, gTrainerCardPtr->language);
-
-#if ENGLISH
     StringAppend(str, gOtherText_TrainersTrainerCard);
-#elif GERMAN
-    de_sub_8073174(str, gOtherText_TrainersTrainerCard);
-#endif
-
     MenuPrint_RightAligned(gStringVar1, 28, 2);
 }
 

@@ -1,6 +1,6 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_TIME_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_TIME_WORDS
-#if ENGLISH
+
 u8 gEasyChatGroupWords_Time[] = _(
                                   "FALL$"
                                   "MORNING$"
@@ -48,53 +48,5 @@ u8 gEasyChatGroupWords_Time[] = _(
                                   "NIGHT$"
                                   "WEEK$"
                                   );
-#elif GERMAN
-u8 gEasyChatGroupWords_Time[] = _(
-                                  "HERBST$"
-                                  "MORGEN$"
-                                  "ÜBERMORGEN$"
-                                  "LETZTE(N)$"
-                                  "TAG$"
-                                  "IRGENDWANN$"
-                                  "IMMER$"
-                                  "MOMENTAN$"
-                                  "EWIG$"
-                                  "TAGE$"
-                                  "ENDE$"
-                                  "DIENSTAG$"
-                                  "GESTERN$"
-                                  "HEUTE$"
-                                  "FREITAG$"
-                                  "MONTAG$"
-                                  "SPÄTER$"
-                                  "FRÜHER$"
-                                  "AM ANDEREN$"
-                                  "ZEIT$"
-                                  "SCHLUSS$"
-                                  "MITTWOCH$"
-                                  "BALD$"
-                                  "START$"
-                                  "MONAT$"
-                                  "STOPP$"
-                                  "JETZT$"
-                                  "LETZTER$"
-                                  "NÄCHSTES$"
-                                  "ALTER$"
-                                  "SAMSTAG$"
-                                  "SOMMER$"
-                                  "SONNTAG$"
-                                  "ANFANG$"
-                                  "FRÜHLING$"
-                                  "TAGESZEIT$"
-                                  "WINTER$"
-                                  "TÄGLICH$"
-                                  "DAMALS$"
-                                  "FAST$"
-                                  "BEINAHE$"
-                                  "DONNERSTAG$"
-                                  "BETTZEIT$"
-                                  "NACHT$"
-                                  "WOCHE$"
-                                  );
-#endif // GAME_LANGUAGE
+
 #endif // DATA_TEXT_EASY_CHAT_GROUPS_TIME_WORDS

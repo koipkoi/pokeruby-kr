@@ -2517,11 +2517,7 @@ static u8 UpdateWindowText(struct Window *win)
     return 0;
 }
 
-#if defined(ENGLISH)
 #define SUB_800374C_LINE_LENGTH 26
-#elif defined(GERMAN)
-#define SUB_800374C_LINE_LENGTH 27
-#endif
 
 u8 Text_UpdateWindowInBattle(struct Window *win)
 {

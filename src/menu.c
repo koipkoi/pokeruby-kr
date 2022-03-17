@@ -634,7 +634,6 @@ int sub_8072AB0(const u8 *str, u8 left, u16 top, u8 width, u8 height, u32 a6)
 {
     u8 newlineCount = sub_8004FD0(gMenuWindowPtr, NULL, str, gMenuTextTileOffset, left, top, width, a6);
 
-#if ENGLISH
     left /= 8;
     top /= 8;
     width = (width + 7) / 8;
@@ -642,20 +641,6 @@ int sub_8072AB0(const u8 *str, u8 left, u16 top, u8 width, u8 height, u32 a6)
 
     if (newlineCount < height)
         Menu_BlankWindowRect(left, top + 2 * newlineCount, left + width - 1, height + top - 1);
-#elif GERMAN
-    // This looks suspiciously macro-like
-    u8 r1;
-    if ((left & 7) == 0)
-        r1 = (width + 7) / 8 - 1;
-    else
-        r1 = (width + (left & 7) - 1) / 8;
-    width = r1;
-    left /= 8;
-    height = (height + 7) / 8;
-    top /= 8;
-    if (newlineCount < height)
-        Menu_BlankWindowRect(left, top + 2 * newlineCount, left + width, height + top - 1);
-#endif
 }
 
 void MenuPrint_RightAligned(const u8 *str, u8 right, u8 top)
@@ -769,51 +754,3 @@ void Menu_DestroyCursor(void)
 {
     DestroyMenuCursor();
 }
-
-#if GERMAN
-void de_sub_8073110(u8 * buffer, u8 * name) {
-    u8 * ptr, *ptr2, *ptr3;
-
-    ptr2 = buffer;
-    ptr = &gStringVar1[1 + StringLengthN(gStringVar1, 256)];
-    ptr3 = ptr;
-
-    for (;;)
-    {
-        if (*ptr2 == EOS)
-            break;
-
-        if (*ptr2 == 0xFD)
-        {
-
-            *ptr3 = EOS;
-            ptr2 += 2;
-
-            StringAppend(ptr, name);
-            StringAppend(ptr, ptr2);
-
-            buffer[0] = EOS;
-            StringAppend(buffer, ptr);
-            break;
-        }
-
-        *ptr3 = *ptr2;
-        ptr2 += 1;
-        ptr3 += 1;
-    }
-}
-
-u8 *de_sub_8073174(u8 *name, const u8 *format) {
-    u32 offset;
-    u8 *ptr;
-
-    offset = StringLengthN(gStringVar2, 0x100);
-    ptr = &gStringVar2[1 + offset];
-
-    StringCopy(ptr, format);
-
-    de_sub_8073110(ptr, name);
-
-    return StringCopy(name, ptr);
-}
-#endif

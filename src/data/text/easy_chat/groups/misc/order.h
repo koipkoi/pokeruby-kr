@@ -1,7 +1,6 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_MISC_ORDER
 #define DATA_TEXT_EASY_CHAT_GROUPS_MISC_ORDER
 
-#if ENGLISH
 u16 gEasyChatGroupOrder_Misc[] = {
     7,
     24,
@@ -46,51 +45,5 @@ u16 gEasyChatGroupOrder_Misc[] = {
     32,
     37,
 };
-#elif GERMAN
-u16 gEasyChatGroupOrder_Misc[] = {
-    2,
-    16,
-    12,
-    20,
-    14,
-    23,
-    24,
-    25,
-    15,
-    17,
-    18,
-    5,
-    30,
-    39,
-    22,
-    33,
-    10,
-    3,
-    19,
-    9,
-    0,
-    11,
-    40,
-    31,
-    13,
-    27,
-    7,
-    41,
-    4,
-    21,
-    36,
-    35,
-    1,
-    6,
-    38,
-    26,
-    28,
-    37,
-    34,
-    29,
-    32,
-    8,
-};
-#endif // GAME_LANGUAGE
 
 #endif // DATA_TEXT_EASY_CHAT_GROUPS_MISC_ORDER

@@ -26,11 +26,7 @@
 #define LANGUAGE_SPANISH  7
 #define NUM_LANGUAGES     7
 
-#if defined(ENGLISH)
 #define GAME_LANGUAGE (LANGUAGE_ENGLISH)
-#elif defined(GERMAN)
-#define GAME_LANGUAGE (LANGUAGE_GERMAN)
-#endif
 
 #if defined(SAPPHIRE)
 #define GAME_VERSION (VERSION_SAPPHIRE)

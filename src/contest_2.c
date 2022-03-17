@@ -278,11 +278,7 @@ const struct SpriteTemplate sSpriteTemplate_JudgeSpeechBubble = {
     .callback = SpriteCallbackDummy,
 };
 
-#if defined(ENGLISH)
-#include "data/text/contest_en.h"
-#elif defined(GERMAN)
-#include "data/text/contest_de.h"
-#endif //ENGLISH
+#include "data/text/contest.h"
 
 UNUSED
 const u8 ALIGNED(2) _unk_83CC3BE[] = __("ピラ");
@@ -545,41 +541,22 @@ const u8 gContestExcitementTable[][5] =
     }
 };
 
-#if defined(ENGLISH)
-#define CONTEST_WINNER_1_NICKNAME    "TAILTA"
-#define CONTEST_WINNER_1_OTNAME      "WYATT"
-#define CONTEST_WINNER_2_NICKNAME    "BRELO"
-#define CONTEST_WINNER_2_OTNAME      "LIANA"
-#define CONTEST_WINNER_3_NICKNAME    "PELEP"
-#define CONTEST_WINNER_3_OTNAME      "TIERA"
-#define CONTEST_WINNER_4_NICKNAME    "PELEP"
-#define CONTEST_WINNER_4_OTNAME      "TIERA"
-#define CONTEST_WINNER_5_NICKNAME    "PELEP"
-#define CONTEST_WINNER_5_OTNAME      "TIERA"
-#define CONTEST_WINNER_6_NICKNAME    "KITSY"
-#define CONTEST_WINNER_6_OTNAME      "OMAR"
-#define CONTEST_WINNER_7_NICKNAME    "GULPS"
-#define CONTEST_WINNER_7_OTNAME      "MACIE"
-#define CONTEST_WINNER_8_NICKNAME    "LOUDED"
-#define CONTEST_WINNER_8_OTNAME      "BRYANT"
-#elif defined(GERMAN)
-#define CONTEST_WINNER_1_NICKNAME    "SCHWALBI"
-#define CONTEST_WINNER_1_OTNAME      "ROSEL"
-#define CONTEST_WINNER_2_NICKNAME    "TUFUNG"
-#define CONTEST_WINNER_2_OTNAME      "WITOLD"
-#define CONTEST_WINNER_3_NICKNAME    "LIPPER"
-#define CONTEST_WINNER_3_OTNAME      "RUFUS"
-#define CONTEST_WINNER_4_NICKNAME    "LIPPER"
-#define CONTEST_WINNER_4_OTNAME      "ELLEN"
-#define CONTEST_WINNER_5_NICKNAME    "LIPPER"
-#define CONTEST_WINNER_5_OTNAME      "AVIA"
-#define CONTEST_WINNER_6_NICKNAME    "CONEC"
-#define CONTEST_WINNER_6_OTNAME      "HAUBERT"
-#define CONTEST_WINNER_7_NICKNAME    "SCHLUCKI"
-#define CONTEST_WINNER_7_OTNAME      "HEILWIG"
-#define CONTEST_WINNER_8_NICKNAME    "KEELO"
-#define CONTEST_WINNER_8_OTNAME      "ISEGRIM"
-#endif
+#define CONTEST_WINNER_1_NICKNAME "TAILTA"
+#define CONTEST_WINNER_1_OTNAME   "WYATT"
+#define CONTEST_WINNER_2_NICKNAME "BRELO"
+#define CONTEST_WINNER_2_OTNAME   "LIANA"
+#define CONTEST_WINNER_3_NICKNAME "PELEP"
+#define CONTEST_WINNER_3_OTNAME   "TIERA"
+#define CONTEST_WINNER_4_NICKNAME "PELEP"
+#define CONTEST_WINNER_4_OTNAME   "TIERA"
+#define CONTEST_WINNER_5_NICKNAME "PELEP"
+#define CONTEST_WINNER_5_OTNAME   "TIERA"
+#define CONTEST_WINNER_6_NICKNAME "KITSY"
+#define CONTEST_WINNER_6_OTNAME   "OMAR"
+#define CONTEST_WINNER_7_NICKNAME "GULPS"
+#define CONTEST_WINNER_7_OTNAME   "MACIE"
+#define CONTEST_WINNER_8_NICKNAME "LOUDED"
+#define CONTEST_WINNER_8_OTNAME   "BRYANT"
 
 const struct ContestWinner gDefaultContestWinners[] = {
     {

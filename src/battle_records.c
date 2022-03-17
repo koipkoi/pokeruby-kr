@@ -293,11 +293,7 @@ void ShowLinkBattleRecords(void)
     MenuPrint_Centered(gOtherText_BattleResults, 0, 1, 240);
 
     PrintLinkBattleWinsLossesDraws(gSaveBlock1.linkBattleRecords);
-#if ENGLISH
     Menu_PrintText(gOtherText_WinLoseDraw, 12, 6);
-#elif GERMAN
-    Menu_PrintTextPixelCoords(gOtherText_WinLoseDraw, 88, 48, 1);
-#endif
 
     for (i = 0; i < 5; i++)
     {

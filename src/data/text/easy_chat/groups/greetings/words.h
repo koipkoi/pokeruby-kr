@@ -1,6 +1,6 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_GREETINGS_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_GREETINGS_WORDS
-#if ENGLISH
+
 u8 gEasyChatGroupWords_Greetings[] = _(
                                        "THANKS$"
                                        "YES$"
@@ -45,50 +45,5 @@ u8 gEasyChatGroupWords_Greetings[] = _(
                                        "COME OVER$"
                                        "COUNT ON$"
                                        );
-#elif GERMAN
-u8 gEasyChatGroupWords_Greetings[] = _(
-                                       "DANK$"
-                                       "JA$"
-                                       "HIER KOMMT$"
-                                       "HIER BIN ICH$"
-                                       "HIER IST ES$"
-                                       "YEAH$"
-                                       "WILLKOMMEN$"
-                                       "AU$"
-                                       "WIE$"
-                                       "GLÜCKWUNSCH$"
-                                       "GIB$"
-                                       "SORRY$"
-                                       "VERZEIHUNG$"
-                                       "SCHON GUT$"
-                                       "HEY DA$"
-                                       "HALLO$"
-                                       "TSCHÜSS$"
-                                       "DANKE SCHÖN$"
-                                       "ICH BIN DA$"
-                                       "PARDON$"
-                                       "TAGCHEN$"
-                                       "BIS DANN$"
-                                       "ENTSCHULDIGE$"
-                                       "NUN, DANN$"
-                                       "WEITER SO$"
-                                       "SCHÄTZEN$"
-                                       "HEY?$"
-                                       "WAS IST LOS?$"
-                                       "WIE?$"
-                                       "NEIN$"
-                                       "TAG AUCH$"
-                                       "YEAH, YEAH$"
-                                       "TSCHAU$"
-                                       "BIS BALD$"
-                                       "HEY$"
-                                       "GERUCH$"
-                                       "HÖR ZU$"
-                                       "HUH HAH$"
-                                       "JUCHUU$"
-                                       "JEPP$"
-                                       "ACH, KOMM$"
-                                       "ZÄHLEN AUF$"
-                                       );
-#endif // GAME_LANGUAGE
+
 #endif // DATA_TEXT_EASY_CHAT_GROUPS_GREETINGS_WORDS

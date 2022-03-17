@@ -849,7 +849,6 @@ const union AffineAnimCmd *const gSpriteAffineAnimTable_8215AC0[] = {
 };
 
 const struct InGameTrade gIngameTrades[] = {
-#if ENGLISH
     {
         _("MAKIT"), SPECIES_MAKUHITA,
         5, 5, 4, 4, 4, 4,
@@ -879,41 +878,9 @@ const struct InGameTrade gIngameTrades[] = {
         _("LANE"), FEMALE, 10,
         SPECIES_BELLOSSOM
     }
-#elif GERMAN
-    {
-        _("MAKIT"), SPECIES_MAKUHITA,
-        5, 5, 4, 4, 4, 4,
-        TRUE, 49562,
-        5, 5, 5, 5, 30,
-        0x9C40,
-        ITEM_X_ATTACK, -1,
-        _("MAIK"), MALE, 10,
-        SPECIES_SLAKOTH
-    }, {
-        _("CONEC"), SPECIES_SKITTY,
-        5, 4, 4, 5, 4, 4,
-        FALSE, 2259,
-        5, 5, 30, 5, 5,
-        0x498A2E17,
-        ITEM_GLITTER_MAIL, 0,
-        _("MADINA"), FEMALE, 10,
-        SPECIES_PIKACHU
-    }, {
-        _("CORASO"),
-        SPECIES_CORSOLA,
-        4, 4, 5, 4, 4, 5,
-        TRUE, 50183,
-        5, 30, 5, 5, 5,
-        0x4C970B7F,
-        ITEM_TROPIC_MAIL, 1,
-        _("LIANA"), FEMALE, 10,
-        SPECIES_BELLOSSOM
-    }
-#endif
 };
 
 const u16 gIngameTradeMail[][10] = {
-#if ENGLISH
     {
         EC_POKEMON(PIKACHU),
         EC_WORD_THANK_YOU,
@@ -937,31 +904,6 @@ const u16 gIngameTradeMail[][10] = {
         EC_WORD_PRETTY,
         0
     }
-#elif GERMAN
-    {
-        EC_POKEMON(PIKACHU),
-        EC_WORD_THANK_YOU,
-        EC_WORD_EXCL,
-        EC_WORD_MY,
-        EC_POKEMON(SKITTY),
-        EC_WORD_EATS,
-        0xFFFF,
-        EC_WORD_A_LOT,
-        EC_WORD_EXCL,
-        0
-    }, {
-        EC_WORD_I,
-        EC_WORD_WANT,
-        EC_WORD_OF,
-        EC_MOVE2(PETAL_DANCE),
-        EC_WORD_WORKS,
-        EC_WORD_THE,
-        EC_WORD_IS,
-        EC_WORD_SO,
-        EC_WORD_PRETTY,
-        0
-    }
-#endif
 };
 
 const s8 gTradeBallVerticalVelocityTable[] = {
@@ -3041,9 +2983,6 @@ void sub_804A51C(u8 a0, u8 a1, u8 a2, u8 a3, u8 a4, u8 a5)
         gUnknown_03004824->unk_00c8.unk_12[a2 + 32 * a3 - 32] = gUnknown_03004824->unk_00c8.unk_12[a2 + 32 * a3 - 33];
         gUnknown_03004824->unk_00c8.unk_12[a2 + 32 * a3 - 31] = gUnknown_03004824->unk_00c8.unk_12[a2 + 32 * a3 - 36] | 0x400;
     }
-#ifdef GERMAN
-    gUnknown_03004824->unk_00c8.unk_10 = 1;
-#endif
 }
 
 static void sub_804A6DC(u8 whichParty)
@@ -3132,18 +3071,8 @@ static void sub_804A96C(struct UnkStructD *arg0, u8 left, u8 top, const u16 *til
         }
     }
 
-#if ENGLISH
-    arg0->unk_10 = 1;
-#endif
-}
-
-#if GERMAN
-static void sub_804A96C_alt(struct UnkStructD *arg0, u8 left, u8 top, const u16 *tilemap, u8 width, u8 height, u16 sp8) {
-    sub_804A96C(arg0, left, top, tilemap, width, height, sp8);
-
     arg0->unk_10 = 1;
 }
-#endif
 
 static void sub_804A9F4(u8 unused)
 {
@@ -4996,10 +4925,6 @@ static void sub_804DAD4(struct MailStruct *mail, const struct InGameTrade *trade
     }
 
     StringCopy(mail->playerName, trade->otName);
-
-#if GERMAN
-    PadNameString(mail->playerName, CHAR_SPACE);
-#endif
 
     mail->trainerId[0] = trade->otId >> 24;
     mail->trainerId[1] = trade->otId >> 16;

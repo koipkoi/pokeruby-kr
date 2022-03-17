@@ -27,11 +27,7 @@
 #include "trainer.h"
 #include "tv.h"
 
-#if ENGLISH
 #include "data/battle_tower/trainers.h"
-#elif GERMAN
-#include "data/battle_tower/trainers_de.h"
-#endif
 
 static const u16 sBattleTowerHeldItems[] =
 {
@@ -1598,20 +1594,3 @@ void TryEnableBravoTrainerBattleTower(void)
             sub_80BFD20();
     }
 }
-
-#if GERMAN
-u8 de_sub_81364AC(void)
-{
-    if (gSaveBlock2.battleTower.battleTowerTrainerId == BATTLE_TOWER_EREADER_TRAINER_ID)
-        return gSaveBlock2.battleTower.ereaderTrainer.trainerClass;
-    else if (gSaveBlock2.battleTower.battleTowerTrainerId >= BATTLE_TOWER_RECORD_MIXING_TRAINER_BASE_ID)
-        return gSaveBlock2.battleTower.records[gSaveBlock2.battleTower.battleTowerTrainerId - BATTLE_TOWER_RECORD_MIXING_TRAINER_BASE_ID].trainerClass;
-    else
-        return gBattleTowerTrainers[gSaveBlock2.battleTower.battleTowerTrainerId].trainerClass;
-}
-
-u8 de_sub_81364F8(void)
-{
-    return gSaveBlock2.battleTower.ereaderTrainer.trainerClass;
-}
-#endif

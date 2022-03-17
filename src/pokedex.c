@@ -158,13 +158,10 @@ static const u16 sNationalPokedexPalette[] = INCBIN_U16("graphics/pokedex/nation
 const u8 gEmptySpacce_839F7FC[0xA4] = {0};
 static const u8 gUnknown_0839F8A0[] = INCBIN_U8("graphics/pokedex/pokedex_cry_layout.bin.lz");
 static const u8 gUnknown_0839F988[] = INCBIN_U8("graphics/pokedex/pokedex_size_layout.bin.lz");
-#if ENGLISH
 static const u8 gUnknown_0839FA7C[] = INCBIN_U8("graphics/pokedex/noball.4bpp.lz");
-#elif GERMAN
-extern const u8 gUnknown_0839FA7C[];
-#endif
 
 #include "data/pokedex_orders.h"
+
 static const struct OamData gOamData_83A0404 =
 {
     .y = 160,
@@ -492,11 +489,9 @@ static const u8 gUnknown_083A05EC[] = {2, 4, 8, 16, 32};
 static const u8 gUnknown_083A05F1[] = {16, 8, 4, 2, 1};
 const u8 gEmptySpacce_83A05F6[] = {0, 0};  // Padding, maybe?
 static const u8 gUnknown_083A05F8[] = _("");
-#if ENGLISH
-#include "data/pokedex_entries_en.h"
-#elif GERMAN
-#include "data/pokedex_entries_de.h"
-#endif
+
+#include "data/pokedex_entries.h"
+
 static const u16 sSizeScreenSilhouette_Pal[16] = {0};
 static const u8 *const sMonFootprintTable[] =
 {
@@ -2884,11 +2879,7 @@ static u8 sub_808F284(struct PokedexListItem *item, u8 b)
     return b;
 }
 
-#if ENGLISH
 #define CATEGORY_LEFT (11)
-#elif GERMAN
-#define CATEGORY_LEFT (16)
-#endif
 
 static void Task_InitPageScreenMultistep(u8 taskId)
 {
@@ -4247,7 +4238,6 @@ static void UnusedPrintMonName(const u8 *name, u8 left, u8 top)
     MenuPrint_AlignedToRightOfReferenceString(str, left, top, gDexText_UnknownPoke);
 }
 
-#if ENGLISH
 void UnusedPrintDecimalNum(u16 a, u8 left, u8 top)
 {
     u8 str[6];
@@ -4284,51 +4274,6 @@ void UnusedPrintDecimalNum(u16 a, u8 left, u8 top)
     str[5] = EOS;
     Menu_PrintText(str, left, top);
 }
-#elif GERMAN
-void UnusedPrintDecimalNum(u16 arg0, u8 left, u8 top) {
-    u8 buffer[8];
-    int offset;
-    u8 result;
-
-    u8 r6 = 0;
-    offset = 0;
-
-
-    buffer[r6++] = 0xFC;
-    buffer[r6++] = 0x13;
-    r6++;
-
-    result = (arg0 / 1000);
-    if (result == 0)
-    {
-        offset = 6;
-    }
-    else
-    {
-        buffer[r6++] = result + CHAR_0;
-    }
-
-
-    result = (arg0 % 1000) / 100;
-
-    if (result == 0 && offset != 0)
-    {
-        offset += 6;
-    }
-    else
-    {
-        buffer[r6++] = result + CHAR_0;
-    }
-
-    buffer[r6++] = (((arg0 % 1000) % 100) / 10) + CHAR_0;
-    buffer[r6++] = CHAR_COMMA;
-    buffer[r6++] = (((arg0 % 1000) % 100) % 10) + CHAR_0;
-
-    buffer[r6++] = EOS;
-    buffer[2] = offset;
-    Menu_PrintText(buffer, left, top);
-}
-#endif
 
 #ifdef UNITS_IMPERIAL
 #define CHAR_PRIME (0xB4)
@@ -4704,11 +4649,7 @@ int DoPokedexSearch(u8 dexMode, u8 order, u8 abcGroup, u8 bodyColor, u8 type1, u
     return resultsCount;
 }
 
-#if ENGLISH
 #define SUB_8091E20_WIDTH (208)
-#elif GERMAN
-#define SUB_8091E20_WIDTH (216)
-#endif
 
 void EraseAndPrintSearchTextBox(const u8 *str)
 {

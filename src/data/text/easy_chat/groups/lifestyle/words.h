@@ -1,6 +1,6 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_LIFESTYLE_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_LIFESTYLE_WORDS
-#if ENGLISH
+
 u8 gEasyChatGroupWords_Lifestyle[] = _(
                                        "CHORES$"
                                        "HOME$"
@@ -48,53 +48,5 @@ u8 gEasyChatGroupWords_Lifestyle[] = _(
                                        "RENTAL$"
                                        "WORLD$"
                                        );
-#elif GERMAN
-u8 gEasyChatGroupWords_Lifestyle[] = _(
-                                       "PFLICHTEN$"
-                                       "HEIM$"
-                                       "GELD$"
-                                       "TASCHENGELD$"
-                                       "BAD$"
-                                       "GESPRÄCH$"
-                                       "SCHULE$"
-                                       "GEDENKEN$"
-                                       "GEWOHNHEIT$"
-                                       "GRUPPE$"
-                                       "WORT$"
-                                       "LAGER$"
-                                       "SERVICE$"
-                                       "ARBEIT$"
-                                       "SYSTEM$"
-                                       "TRAINIEREN$"
-                                       "LEKTION$"
-                                       "UNTERRICHT$"
-                                       "INFORMATION$"
-                                       "LEBENDIG$"
-                                       "LEHRER$"
-                                       "TURNIER$"
-                                       "BRIEF$"
-                                       "GESCHEHEN$"
-                                       "DIGITALES$"
-                                       "TEST$"
-                                       "KAUFHAUS$"
-                                       "FERNSEHER$"
-                                       "TELEFON$"
-                                       "ITEM$"
-                                       "NAME$"
-                                       "NEUIGKEITEN$"
-                                       "POPULÄR$"
-                                       "PARTY$"
-                                       "LERNEN$"
-                                       "MASCHINE$"
-                                       "POST$"
-                                       "MITTEILUNG$"
-                                       "VERSPRECHEN$"
-                                       "TRAUM$"
-                                       "KINDERGARTEN$"
-                                       "LEBEN$"
-                                       "RADIO$"
-                                       "MIETE$"
-                                       "WELT$"
-                                       );
-#endif // GAME_LANGUAGE
+
 #endif // DATA_TEXT_EASY_CHAT_GROUPS_LIFESTYLE_WORDS

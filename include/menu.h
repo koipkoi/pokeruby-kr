@@ -88,8 +88,4 @@ void sub_8072DDC(u8);
 void Menu_DestroyCursor(void);
 u8 MoveMenuCursor3(s8 delta);
 
-#if GERMAN
-u8 *de_sub_8073174(u8 *name, const u8 *format);
-#endif
-
 #endif // GUARD_MENU_H

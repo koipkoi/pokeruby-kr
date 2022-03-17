@@ -317,16 +317,9 @@ static u8 TextSpeed_ProcessInput(u8 selection)
     return selection;
 }
 
-#if ENGLISH
 #define TEXTSPEED_SLOW_LEFT (120)
 #define TEXTSPEED_MIX_LEFT (155)
 #define TEXTSPEED_FAST_LEFT (184)
-#endif
-#if GERMAN
-#define TEXTSPEED_SLOW_LEFT (120)
-#define TEXTSPEED_MIX_LEFT (161)
-#define TEXTSPEED_FAST_LEFT (202)
-#endif
 
 static void TextSpeed_DrawChoices(u8 selection)
 {
@@ -368,13 +361,8 @@ static u8 BattleStyle_ProcessInput(u8 selection)
     return selection;
 }
 
-#if ENGLISH
 #define BATTLESTYLE_SHIFT (120)
 #define BATTLESTYLE_SET (190)
-#elif GERMAN
-#define BATTLESTYLE_SHIFT (120)
-#define BATTLESTYLE_SET (178)
-#endif
 
 static void BattleStyle_DrawChoices(u8 selection)
 {
@@ -433,7 +421,6 @@ static u8 FrameType_ProcessInput(u8 selection)
 
 static void FrameType_DrawChoices(u8 selection)
 {
-#if ENGLISH
     u8 text[6];
     u8 n = selection + 1;
     u16 i;
@@ -460,27 +447,6 @@ static void FrameType_DrawChoices(u8 selection)
     text[i] = EOS;
     Menu_PrintText(gSystemText_Type, 15, 15);
     Menu_PrintText(text, 18, 15);
-#elif GERMAN
-    u8 text[16];
-    u8 n = selection + 1;
-    u8 *str;
-
-    StringCopy(text, gSystemText_Type);
-    str = StringAppend(text, gSystemText_Terminator);
-
-    if (n / 10 != 0)
-    {
-        *str++ = n / 10 + CHAR_0;
-        *str++ = n % 10 + CHAR_0;
-    }
-    else
-    {
-        *str++ = n % 10 + CHAR_0;
-        *str++ = CHAR_SPACE;
-    }
-    *str = EOS;
-    Menu_PrintText(text, 15, 15);
-#endif
 }
 
 static u8 ButtonMode_ProcessInput(u8 selection)

@@ -197,11 +197,7 @@ struct SpritePalette gCryMeterNeedleSpritePalettes[] = {
     {}
 };
 
-#if ENGLISH
 #define CRY_METER_MAP_WIDTH 10
-#elif GERMAN
-#define CRY_METER_MAP_WIDTH 32
-#endif
 
 bool8 LoadCryWaveformWindow(struct CryScreenWindow *cry, u8 bgId)
 {

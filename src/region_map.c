@@ -55,11 +55,7 @@ static const u8 sRegionMapBkgnd_TilemapLZ[] = INCBIN_U8("graphics/pokenav/region
 
 static const u8 sRegionMapLayout[] = INCBIN_U8("graphics/pokenav/region_map_section_layout.bin");
 
-#if ENGLISH
 #include "data/region_map/region_map_entries.h"
-#elif GERMAN
-#include "data/region_map/region_map_entries_de.h"
-#endif
 
 static const u16 sUnderwaterMaps[][2] =
 {

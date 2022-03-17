@@ -27,33 +27,20 @@
 #define REVISION 0
 #endif
 
-#if (ENGLISH && REVISION == 2) || (GERMAN && REVISION == 1)
+#if REVISION == 2
 #define BUGFIX_BERRY
 #endif
 
-#if (ENGLISH && REVISION >= 1) || GERMAN
+#if REVISION >= 1
 #define BUGFIX_GLYPHWIDTH
 #define BUGFIX_SAVEFAILEDSCREEN1
 #endif
 
-#if GERMAN
-#define BUGFIX_SAVEFAILEDSCREEN2
-#endif
-
-// European editions of Ruby/Sapphire and all editions of Emerald have this fix.
-#if GERMAN
-#define BUGFIX_TRAINERAPPROACH
-#endif
-
-#if (ENGLISH && REVISION >= 1) || GERMAN
+#if REVISION >= 1
 #define BUGFIX_EVO_NAME
 #endif
 
-#ifdef ENGLISH
 #define UNITS_IMPERIAL
-#elif GERMAN
-#define UNITS_METRIC
-#endif
 
 // An option to use fuller translations for debug ROMs.
 // #define DEBUG_FIX 1 // Unsupported languages default to English text.

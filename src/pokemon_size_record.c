@@ -88,11 +88,7 @@ static u32 GetMonSize(u16 species, u16 b)
 
 static void FormatMonSizeRecord(u8 *string, u32 size)
 {
-#if ENGLISH
     u8 decimalPoint[] = _(".");
-#elif GERMAN
-    u8 decimalPoint[] = _(",");
-#endif
 
 #ifdef UNITS_IMPERIAL
     //Convert size from centimeters to inches

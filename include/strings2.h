@@ -319,8 +319,4 @@ extern const u8 gOtherText_OK[];
 // wallclock
 extern const u8 gOtherText_CorrectTimePrompt[];
 
-#if GERMAN
-extern const u8 deuOtherText_ForgotAndLearned[];
-#endif
-
 #endif // GUARD_STRINGS2_H

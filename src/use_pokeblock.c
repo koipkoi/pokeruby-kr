@@ -20,13 +20,8 @@
 
 #define GFX_TAG_CONDITIONUPDOWN 0
 
-#ifdef GERMAN
-extern const u16 ConditionUpDownPalette[16];
-extern const u8 ConditionUpDownTiles[0x200];
-#else
 const u16 ConditionUpDownPalette[] = INCBIN_U16("graphics/misc/condition_up_down.gbapal");
 const u8 ConditionUpDownTiles[] = INCBIN_U8("graphics/misc/condition_up_down.4bpp");
-#endif
 
 static const u32 sContestStatsMonData[] = {
     MON_DATA_COOL,

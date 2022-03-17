@@ -11,22 +11,12 @@ s16 CalcWordPitch(int arg0, int songPos)
     return gBardSoundPitchTables[arg0][songPos];
 }
 
-#if ENGLISH
 const struct BardSound *GetWordSounds(u16 group, u16 word)
 {
     const struct BardSound (*sounds)[6] = gBardSoundsTable[group];
 
     return sounds[word];
 }
-#elif GERMAN
-const struct BardSound *GetWordSounds(u16 group, u16 word)
-{
-    const struct BardSound (*sounds)[6] = gBardSoundsTable[group];
-    u32 index = de_sub_80EB748(group, word);
-
-    return sounds[index];
-}
-#endif
 
 s32 GetWordPhonemes(struct BardSong *song, const struct BardSound *src, u16 word)
 {

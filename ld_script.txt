@@ -63,7 +63,6 @@ SECTIONS {
         src/pokemon_2.o(.text);
         src/pokemon_item_effect.o(.text);
         src/pokemon_3.o(.text);
-        src/de_rom_8040FE0.o(.text);
         src/trig.o(.text);
         src/random.o(.text);
         src/util.o(.text);

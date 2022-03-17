@@ -11,13 +11,8 @@
 #include "task.h"
 #include "ewram.h"
 
-#if ENGLISH
 #define WINDOW_LEFT 3
 #define WINDOW_RIGHT 26
-#elif GERMAN
-#define WINDOW_LEFT 0
-#define WINDOW_RIGHT 29
-#endif
 
 // extern
 extern u8 gPartyMenuMessage_IsPrinting;

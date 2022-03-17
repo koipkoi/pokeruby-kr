@@ -1,7 +1,6 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_TRENDY_SAYING_ORDER
 #define DATA_TEXT_EASY_CHAT_GROUPS_TRENDY_SAYING_ORDER
 
-#if ENGLISH
 u16 gEasyChatGroupOrder_TrendySaying[] = {
     7,
     2,
@@ -37,42 +36,5 @@ u16 gEasyChatGroupOrder_TrendySaying[] = {
     1,
     31,
 };
-#elif GERMAN
-u16 gEasyChatGroupOrder_TrendySaying[] = {
-    32,
-    24,
-    2,
-    1,
-    28,
-    17,
-    19,
-    11,
-    27,
-    15,
-    7,
-    16,
-    29,
-    4,
-    5,
-    31,
-    8,
-    26,
-    25,
-    23,
-    13,
-    6,
-    20,
-    9,
-    30,
-    10,
-    18,
-    21,
-    12,
-    22,
-    0,
-    3,
-    14,
-};
-#endif // GAME_LANGUAGE
 
 #endif // DATA_TEXT_EASY_CHAT_GROUPS_TRENDY_SAYING_ORDER

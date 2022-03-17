@@ -47,10 +47,6 @@ SYMBOL(gLinkErrorOccurred, 4)
 . += 0x4;
 SYMBOL(gLinkDebugValue2, 4)
 . += 0x4;
-#ifdef GERMAN
-SYMBOL(deUnkValue1, 4)
-SYMBOL(deUnkValue2, 4)
-#endif
 SYMBOL(gLinkPlayerPending, 4)
 SYMBOL(gLinkPlayers, 112)
 SYMBOL(gBlockReceived, 4)

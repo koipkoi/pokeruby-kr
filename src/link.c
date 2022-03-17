@@ -154,11 +154,6 @@ struct Link gLink;
 u8 gLastRecvQueueCount;
 u16 gLinkSavedIme;
 
-#ifdef GERMAN
-u8 deUnkValue1;
-u8 deUnkValue2;
-#endif
-
 EWRAM_DATA bool8 gLinkTestDebugValuesEnabled = 0;
 EWRAM_DATA bool8 gLinkTestDummyBool = 0;
 EWRAM_DATA u32 gFiller_20238B8 = 0;
@@ -565,28 +560,7 @@ static void ProcessRecvCmds(u8 unusedParam)
             Blender_SetBankBerryData(i, gRecvCmds[1][i]);
             break;
         case 0xCCCC:
-#if defined(ENGLISH)
             SendBlock(0, sBlockRequestLookupTable[gRecvCmds[1][i]].address, sBlockRequestLookupTable[gRecvCmds[1][i]].size);
-#elif defined(GERMAN)
-            if (deUnkValue2 == 1)
-            {
-                deUnkValue2 = 2;
-                deUnkValue1 = gRecvCmds[1][i];
-            }
-            else if (deUnkValue2 == 2 || deUnkValue2 == 3)
-            {
-                SendBlock(0, sBlockRequestLookupTable[gRecvCmds[1][i]].address, sBlockRequestLookupTable[gRecvCmds[1][i]].size);
-
-                if (deUnkValue2 == 2)
-                    deUnkValue2 = 1;
-                else
-                    deUnkValue2 = 0;
-            }
-            else
-            {
-                SendBlock(0, sBlockRequestLookupTable[gRecvCmds[1][i]].address, sBlockRequestLookupTable[gRecvCmds[1][i]].size);
-            }
-#endif
             break;
         case 0xCAFE:
             word_3002910[i] = gRecvCmds[1][i];
@@ -697,9 +671,6 @@ void OpenLinkTimed(void)
 {
     sPlayerDataExchangeStatus = EXCHANGE_NOT_STARTED;
     gLinkTimeOutCounter = 0;
-#if defined(GERMAN)
-    ResetBlockSend();
-#endif
     OpenLink();
 }
 

@@ -1,7 +1,6 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_HOBBIES_ORDER
 #define DATA_TEXT_EASY_CHAT_GROUPS_HOBBIES_ORDER
 
-#if ENGLISH
 u16 gEasyChatGroupOrder_Hobbies[] = {
     43,
     1,
@@ -58,63 +57,5 @@ u16 gEasyChatGroupOrder_Hobbies[] = {
     12,
     20,
 };
-#elif GERMAN
-u16 gEasyChatGroupOrder_Hobbies[] = {
-    43,
-    32,
-    1,
-    53,
-    45,
-    12,
-    38,
-    44,
-    46,
-    48,
-    34,
-    10,
-    50,
-    21,
-    49,
-    47,
-    3,
-    11,
-    14,
-    39,
-    41,
-    31,
-    22,
-    0,
-    9,
-    6,
-    18,
-    27,
-    35,
-    19,
-    42,
-    8,
-    26,
-    4,
-    40,
-    37,
-    5,
-    36,
-    28,
-    16,
-    17,
-    51,
-    24,
-    2,
-    25,
-    20,
-    15,
-    7,
-    23,
-    29,
-    52,
-    33,
-    30,
-    13,
-};
-#endif // GAME_LANGUAGE
 
 #endif // DATA_TEXT_EASY_CHAT_GROUPS_HOBBIES_ORDER

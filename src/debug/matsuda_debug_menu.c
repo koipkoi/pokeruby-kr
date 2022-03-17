@@ -389,12 +389,7 @@ static void (* const gUnknown_083C92E4[][2])(struct Sprite *, s8) =
 static const u8 gMatsudaDebugMenu_StartText[] = _("{COLOR CYAN}{HIGHLIGHT RED}");
 static const u8 gMatsudaDebugMenu_StartJapText[] = DTR("かいし", "START"); // because StartText is only called by StringCopy, this part appears to be unused.
 static const u8 gMatsudaDebugMenu_GoBackText[] = DTR("もどる", "BACK");
-
-#ifdef GERMAN
-static const u8 gMatsudaDebugMenu_BattlePointsText[] = _("{COLOR MAGENTA}BP,");
-#else
 static const u8 gMatsudaDebugMenu_BattlePointsText[] = _("{COLOR MAGENTA}BP.");
-#endif
 
 static const u8 MatsudaDebugMenuText_Cool[] = DTR("かっこよさ", "COOL");
 static const u8 MatsudaDebugMenuText_Cute[] = DTR("かわいさ", "CUTE");

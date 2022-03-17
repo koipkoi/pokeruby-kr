@@ -49,11 +49,7 @@ extern void StartBattleIntroAnim();
 extern void sub_804777C();
 extern bool8 move_anim_start_t3();
 
-#if ENGLISH
 #define SUB_812BB10_TILE_DATA_OFFSET 440
-#elif GERMAN
-#define SUB_812BB10_TILE_DATA_OFFSET 444
-#endif
 
 // this file's functions
 void SafariHandleGetAttributes(void);

@@ -900,33 +900,11 @@ void ScriptMenu_CreatePCMenu(void)
     u8 width;
     u8 numChoices;
 
-#if ENGLISH
     u16 playersPCWidth = GetStringWidthInTilesForScriptMenu(gPCText_PlayersPC);
     if (playersPCWidth > GetStringWidthInTilesForScriptMenu(gPCText_SomeonesPC))
         width = playersPCWidth;
     else
         width = 8;
-#elif GERMAN
-    s32 sp8[4];
-    s32 r4 = 0;
-    s32 r5;
-
-    if (FlagGet(FLAG_SYS_PC_LANETTE))
-        sp8[r4++] = GetStringWidthInTilesForScriptMenu(gPCText_LanettesPC);
-    else
-        sp8[r4++] = GetStringWidthInTilesForScriptMenu(gPCText_SomeonesPC);
-    sp8[r4++] = GetStringWidthInTilesForScriptMenu(gPCText_PlayersPC);
-    sp8[r4++] = GetStringWidthInTilesForScriptMenu(gPCText_LogOff);
-    if (FlagGet(FLAG_SYS_GAME_CLEAR))
-        sp8[r4++] = GetStringWidthInTilesForScriptMenu(gPCText_HallOfFame);
-
-    width = 0;
-    for (r5 = 0; r5 < r4; r5++)
-    {
-        if (width < sp8[r5])
-            width = sp8[r5];
-    }
-#endif
 
     if (FlagGet(FLAG_SYS_GAME_CLEAR)) // player has cleared game?
     {

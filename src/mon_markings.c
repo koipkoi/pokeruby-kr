@@ -7,11 +7,7 @@
 #include "sprite.h"
 #include "mon_markings.h"
 
-#ifdef GERMAN
-#define MENU_TEXT_SPRITE_X_OFFSET 24
-#else
 #define MENU_TEXT_SPRITE_X_OFFSET 32
-#endif
 
 extern u8 gPokenavConditionMenuMisc_Gfx[];
 extern u16 gUnknown_08E966B8[];

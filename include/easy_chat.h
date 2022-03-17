@@ -74,11 +74,7 @@ struct Shared1000
     void (*unk1C4)(void);
     u8 unk1C8[0x500];
     u8 unk6C8[0xB78-0x6C8];
-#if GERMAN
-    u16 unkB78[27][270];
-#else
     u16 unkB78[27][255];
-#endif
     u16 unk4142[(0x78-0x42)/2];  //0x446C
     u16 unk4178[(0x41A4-0x4178)/2]; // unknown length
     const u8 *ecWordStrings[0x16][0x100];  //0x44CE in german
@@ -133,9 +129,5 @@ void sub_80EB890(u8);
 u8 sub_80EB8C0(void);
 u16 sub_80EB8EC(void);
 u8 *sub_80EB544(u8 *dst, u16 *words, u16 arg2, u16 arg3);
-
-#if GERMAN
-u32 de_sub_80EB748(s32, s32);
-#endif
 
 #endif // GUARD_EASYCHAT_H

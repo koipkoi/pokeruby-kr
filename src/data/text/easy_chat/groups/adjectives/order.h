@@ -1,7 +1,6 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_ADJECTIVES_ORDER
 #define DATA_TEXT_EASY_CHAT_GROUPS_ADJECTIVES_ORDER
 
-#if ENGLISH
 u16 gEasyChatGroupOrder_Adjectives[] = {
     35,
     23,
@@ -40,45 +39,5 @@ u16 gEasyChatGroupOrder_Adjectives[] = {
     25,
     30,
 };
-#elif GERMAN
-u16 gEasyChatGroupOrder_Adjectives[] = {
-    24,
-    28,
-    17,
-    18,
-    35,
-    23,
-    15,
-    5,
-    19,
-    4,
-    0,
-    8,
-    9,
-    3,
-    21,
-    34,
-    13,
-    30,
-    12,
-    27,
-    31,
-    14,
-    20,
-    6,
-    22,
-    33,
-    11,
-    26,
-    16,
-    2,
-    1,
-    7,
-    29,
-    10,
-    32,
-    25,
-};
-#endif // GAME_LANGUAGE
 
 #endif // DATA_TEXT_EASY_CHAT_GROUPS_ADJECTIVES_ORDER

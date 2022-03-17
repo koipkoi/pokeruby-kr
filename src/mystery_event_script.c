@@ -16,11 +16,7 @@
 #include "util.h"
 #include "mystery_event_msg.h"
 
-#if ENGLISH
 #define LANGUAGE_MASK 0x2
-#elif GERMAN
-#define LANGUAGE_MASK 0x4
-#endif
 
 #ifdef SAPPHIRE
 #define VERSION_MASK 0x100

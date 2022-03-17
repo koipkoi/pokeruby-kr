@@ -270,23 +270,12 @@ static void sub_81464E4(void)
     s32 sizeMajor;
     s32 sizeMinor;
 #endif
-#if GERMAN
-    u8 buffer[16];
-#endif
 
     berryInfo = GetBerryInfo(gSpecialVar_ItemId + OFFSET_7B + 1);
 
     ConvertIntToDecimalStringN(gStringVar1, gSpecialVar_ItemId - FIRST_BERRY_INDEX + 1, STR_CONV_MODE_LEADING_ZEROS, 2);
     Menu_PrintText(gStringVar1, 12, 4);
-
-#if ENGLISH
     Menu_PrintText(berryInfo->name, 14, 4);
-#elif GERMAN
-    StringCopy(buffer, berryInfo->name);
-    StringAppend(buffer, gOtherText_Berry2);
-    Menu_PrintText(buffer, 14, 4);
-#endif
-
     Menu_PrintText(berryInfo->description1, 4, 14);
     Menu_PrintText(berryInfo->description2, 4, 16);
 

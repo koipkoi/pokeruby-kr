@@ -71,38 +71,22 @@ enum
     PAGE_PROGRAMMERS,
     PAGE_GRAPHIC_DESIGNERS,
     PAGE_PRODUCT_SUPPORT,
-
-#if ENGLISH
     PAGE_ARTWORK,
     PAGE_TEXT_EDITOR,
     PAGE_NOA_TESTING,
     PAGE_BRAILLE_CODE_CHECK_1,
     PAGE_BRAILLE_CODE_CHECK_2,
-#elif GERMAN
-    PAGE_NOE_TESTING,
-    PAGE_BRAILLE_CODE_CHECK_1,
-#endif
-
     PAGE_SPECIAL_THANKS_4,
     PAGE_SPECIAL_THANKS_5,
 
     PAGE_COUNT
 };
 
-#if ENGLISH
 #define POKEMON_TILE_COUNT 68
 #define LAST_PAGE (PAGE_TEXT_EDITOR)
 #define UNK_DEFINE_45 (0x45)
 #define UNK_DEFINE_82 (0x82)
 #define UNK_DEF_1F3 (499)
-#elif GERMAN
-#define POKEMON_TILE_COUNT 65
-#define LAST_PAGE (PAGE_NOE_TESTING)
-#define UNK_DEFINE_45 (8)
-#define UNK_DEFINE_82 (0x8D)
-#define UNK_DEF_1F3 (554)
-#endif
-
 #define COLOR_DARK_GREEN 0x1967
 #define COLOR_LIGHT_GREEN 0x328D
 
@@ -231,29 +215,7 @@ const u8 sTheEnd_LetterMap_D[] =
     1, 0x86, 0x87,
 };
 
-#ifdef GERMAN
-const u8 sTheEnd_LetterMap_F[] = {
-    1, 0, 0,
-    1, 0xFF, 0xFF,
-    1, 0x80, 0x8A,
-    1, 0xFF, 0xFF,
-    1, 0xFF, 0xFF,
-};
-
-const u8 sTheEnd_LetterMap_I[] = {
-    0, 1, 0,
-    0xFF, 1, 0xFF,
-    0xFF, 1, 0xFF,
-    0xFF, 1, 0xFF,
-    0x80, 1, 0x80,
-};
-#endif
-
-#ifdef GERMAN
-#include "data/credits_de.h"
-#else
-#include "data/credits_en.h"
-#endif
+#include "data/credits.h"
 
 const u8 sMonSpritePos[][2] =
 {
@@ -1365,19 +1327,12 @@ static void DrawTheEnd(u16 arg0, u16 palette)
     for (pos = 0; pos < 32 * 32; pos++)
         ((u16 *) (VRAM + arg0))[pos] = baseTile + 1;
 
-#if ENGLISH
     DrawLetterMapTiles(sTheEnd_LetterMap_T, 3, 7, arg0, palette);
     DrawLetterMapTiles(sTheEnd_LetterMap_H, 7, 7, arg0, palette);
     DrawLetterMapTiles(sTheEnd_LetterMap_E, 11, 7, arg0, palette);
     DrawLetterMapTiles(sTheEnd_LetterMap_E, 16, 7, arg0, palette);
     DrawLetterMapTiles(sTheEnd_LetterMap_N, 20, 7, arg0, palette);
     DrawLetterMapTiles(sTheEnd_LetterMap_D, 24, 7, arg0, palette);
-#elif GERMAN
-    DrawLetterMapTiles(sTheEnd_LetterMap_E, 7, 7, arg0, palette);
-    DrawLetterMapTiles(sTheEnd_LetterMap_N, 11, 7, arg0, palette);
-    DrawLetterMapTiles(sTheEnd_LetterMap_D, 15, 7, arg0, palette);
-    DrawLetterMapTiles(sTheEnd_LetterMap_E, 19, 7, arg0, palette);
-#endif
 }
 
 static void SpriteCB_Player(struct Sprite *sprite)

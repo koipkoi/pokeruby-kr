@@ -9,10 +9,6 @@
 
 static void sub_80C8644(u8 taskId);
 static void sub_80C8660(u8 taskId);
-#if GERMAN
-static void de_sub_80C9274(bool32 arg0);
-static void de_sub_80C9294(bool32 arg0);
-#endif
 
 static void SendBlockToAllOpponents(const void *data, u16 size)
 {
@@ -116,42 +112,21 @@ void sub_80C8734(u8 taskId)
     u8 *name;
 
     switch (gTasks[taskId].data[0]) {
-#if ENGLISH
         default:
             gTasks[taskId].data[0] = 0;
             SwitchTaskToFollowupFunc(taskId);
             break;
-#elif GERMAN
-            case 8:
-#endif
         case 0:
             if (GetMultiplayerId() == 0) {
                 if (IsLinkTaskFinished()) {
-#if ENGLISH
                     memcpy(gBlockSendBuffer, gContestMons + gContestPlayerMonIndex, sizeof(struct ContestPokemon));
                     sub_8007E9C(2);
                     gTasks[taskId].data[0]++;
-#elif GERMAN
-                    if (gTasks[taskId].data[0] == 0)
-                    {
-                        gTasks[taskId].data[0] = 3;
-                    }
-                    else
-                    {
-                        memcpy(gBlockSendBuffer, gContestMons + gContestPlayerMonIndex, sizeof(struct ContestPokemon));
-                        de_sub_80C9274(FALSE);
-                        sub_8007E9C(2);
-                        gTasks[taskId].data[0] = 1;
-                    }
-#endif
                 }
             }
             else
             {
                 memcpy(gBlockSendBuffer, gContestMons + gContestPlayerMonIndex, sizeof(struct ContestPokemon));
-#if GERMAN
-                de_sub_80C9294(FALSE);
-#endif
                 gTasks[taskId].data[0]++;
             }
             break;
@@ -195,15 +170,6 @@ void sub_80C8734(u8 taskId)
                 gTasks[taskId].data[0]++;
             }
             break;
-#if GERMAN
-        case 2:
-            gTasks[taskId].data[0] = 0;
-            SwitchTaskToFollowupFunc(taskId);
-            break;
-        default:
-            gTasks[taskId].data[0]++;
-            break;
-#endif
     }
 }
 
@@ -246,42 +212,22 @@ void Task_LinkContest_CommunicateCategory(u8 taskId)
 
     switch (gTasks[taskId].data[0])
     {
-#if ENGLISH
         default:
             gTasks[taskId].data[0] = 0;
             SwitchTaskToFollowupFunc(taskId);
             break;
-#elif GERMAN
-        case 8:
-#endif
         case 0:
             gBlockSendBuffer[0] = gTasks[taskId].data[9];
             if (GetMultiplayerId() == 0)
             {
                 if (IsLinkTaskFinished())
                 {
-#if ENGLISH
                     sub_8007E9C(2);
                     gTasks[taskId].data[0]++;
-#elif GERMAN
-                    if (gTasks[taskId].data[0] == 0)
-                    {
-                        gTasks[taskId].data[0] = 3;
-                    }
-                    else
-                    {
-                        de_sub_80C9274(TRUE);
-                        sub_8007E9C(2);
-                        gTasks[taskId].data[0] = 1;
-                    }
-#endif
                 }
             }
             else
             {
-#if GERMAN
-                de_sub_80C9294(TRUE);
-#endif
                 gTasks[taskId].data[0]++;
             }
             break;
@@ -295,15 +241,6 @@ void Task_LinkContest_CommunicateCategory(u8 taskId)
                 gTasks[taskId].data[0]++;
             }
             break;
-#if GERMAN
-        case 2:
-            gTasks[taskId].data[0] = 0;
-            SwitchTaskToFollowupFunc(taskId);
-            break;
-        default:
-            gTasks[taskId].data[0]++;
-            break;
-#endif
     }
 }
 
@@ -522,42 +459,22 @@ void Task_LinkContest_CommunicateLeaderIds(u8 taskId)
 
     switch (gTasks[taskId].data[0])
     {
-#if ENGLISH
         default:
             gTasks[taskId].data[0] = 0;
             SwitchTaskToFollowupFunc(taskId);
             break;
-#elif GERMAN
-        case 8:
-#endif
         case 0:
             gBlockSendBuffer[0] = 0x64;
             if (GetMultiplayerId() == 0)
             {
                 if (IsLinkTaskFinished())
                 {
-#if ENGLISH
                     sub_8007E9C(2);
                     gTasks[taskId].data[0]++;
-#elif GERMAN
-                    if (gTasks[taskId].data[0] == 0)
-                    {
-                        gTasks[taskId].data[0] = 3;
-                    }
-                    else
-                    {
-                        de_sub_80C9274(FALSE);
-                        sub_8007E9C(2);
-                        gTasks[taskId].data[0] = 1;
-                    }
-#endif
                 }
             }
             else
             {
-#if GERMAN
-                de_sub_80C9294(FALSE);
-#endif
                 gTasks[taskId].data[0]++;
             }
             break;
@@ -571,15 +488,6 @@ void Task_LinkContest_CommunicateLeaderIds(u8 taskId)
                 gTasks[taskId].data[0]++;
             }
             break;
-#if GERMAN
-        case 2:
-            gTasks[taskId].data[0] = 0;
-            SwitchTaskToFollowupFunc(taskId);
-            break;
-        default:
-            gTasks[taskId].data[0]++;
-            break;
-#endif
     }
 }
 
@@ -632,37 +540,3 @@ void Task_LinkContest_CommunicateTurnOrder(u8 taskId)
             break;
     }
 }
-
-#if GERMAN
-
-static void de_sub_80C9274(bool32 arg0)
-{
-    if (deUnkValue2 == 1)
-    {
-        if (arg0)
-            deUnkValue2 = 3;
-        else
-            deUnkValue2 = 2;
-    }
-}
-
-static void de_sub_80C9294(bool32 arg0)
-{
-    if (deUnkValue2 == 1)
-    {
-        if (arg0)
-            deUnkValue2 = 3;
-        else
-            deUnkValue2 = 2;
-    }
-    else if (deUnkValue2 == 2)
-    {
-        SendBlock(0, sBlockRequestLookupTable[deUnkValue1].address, sBlockRequestLookupTable[deUnkValue1].size);
-        if (arg0)
-            deUnkValue2 = 0;
-        else
-            deUnkValue2 = 1;
-    }
-}
-
-#endif

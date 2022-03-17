@@ -525,17 +525,10 @@ static void CreateStarterPokemonLabel(u8 prevSelection, u8 selection)
         srcIndex++;
         dstIndex++;
     }
-#if ENGLISH
     labelText[dstIndex++] = CHAR_SPACE;
 
     //Copy POKEMON string to label
     StringCopy(labelText + dstIndex, gOtherText_Poke);
-#elif GERMAN
-    labelText[dstIndex] = EOS;
-    labelText[5] = EXT_CTRL_CODE_BEGIN;
-    labelText[6] = EXT_CTRL_CODE_CLEAR;
-    labelText[7] = (0x70 - 6 * srcIndex) >> 1;
-#endif
     Menu_PrintText(
         labelText,
         gStarterChoose_LabelCoords[selection][0],
@@ -543,11 +536,7 @@ static void CreateStarterPokemonLabel(u8 prevSelection, u8 selection)
     AddTextColorCtrlCode(labelText, 0, 15, 8);
 
     //Copy Pokemon name to label
-#if ENGLISH
     AlignStringInMenuWindow(labelText + 5, gSpeciesNames[species], 0x6B, 1);
-#elif GERMAN
-    AlignStringInMenuWindow(labelText + 5, gSpeciesNames[species], 0x70, 2);
-#endif
     Menu_PrintText(
         labelText,
         gStarterChoose_LabelCoords[selection][0],

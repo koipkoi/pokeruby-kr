@@ -112,11 +112,7 @@ struct UnkStruct1
     /*0x02*/ s16 unk02;
 };
 
-#if ENGLISH
 #define SLOTMACHINE_GFX_TILES 233
-#elif GERMAN
-#define SLOTMACHINE_GFX_TILES 236
-#endif
 
 static void CB2_SlotMachineSetup(void);
 static void CB2_SlotMachineLoop(void);
@@ -3091,11 +3087,6 @@ static void sub_8104CAC(u8 arg0)
                 gUnknown_083ED048[arg0][i].unk02
         );
         task->data[4 + i] = spriteId;
-
-#ifdef GERMAN
-        if (arg0 == 5 && i <= 2)
-            gSprites[spriteId].invisible = TRUE;
-#endif
     }
 }
 

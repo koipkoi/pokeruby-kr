@@ -66,17 +66,10 @@ static void sub_8083CA4(u8 taskId);
 static u8 debug_sub_808B850(void);
 #endif
 
-#ifdef GERMAN
-const u8 TrainerCardColorName_Bronze[] = _("BRONZE");
-const u8 TrainerCardColorName_Copper[] = _("KUPFER");
-const u8 TrainerCardColorName_Silver[] = _("SILBER");
-const u8 TrainerCardColorName_Gold[] = _("GOLD");
-#else
 const u8 TrainerCardColorName_Bronze[] = _("BRONZE");
 const u8 TrainerCardColorName_Copper[] = _("COPPER");
 const u8 TrainerCardColorName_Silver[] = _("SILVER");
 const u8 TrainerCardColorName_Gold[] = _("GOLD");
-#endif
 
 const u8 *const gTrainerCardColorNames[] =
 {
@@ -340,7 +333,6 @@ static void sub_808303C(u8 taskId)
     if (!(gMain.newKeys & A_BUTTON))
         return;
 
-#if ENGLISH
     if (linkPlayerCount < taskData[1])
         return;
 
@@ -349,17 +341,6 @@ static void sub_808303C(u8 taskId)
     ConvertIntToDecimalStringN(gStringVar1, linkPlayerCount, STR_CONV_MODE_LEFT_ALIGN, 1);
     ShowFieldAutoScrollMessage((u8 *)gUnknown_081A4975);
     gTasks[taskId].func = sub_80830E4;
-#elif GERMAN
-    if ((gLinkType == 0x2255 && (u32)linkPlayerCount > 1)
-     || (gLinkType != 0x2255 && taskData[1] <= linkPlayerCount))
-    {
-        sub_80081C8(linkPlayerCount);
-        sub_8082D4C();
-        ConvertIntToDecimalStringN(gStringVar1, linkPlayerCount, STR_CONV_MODE_LEFT_ALIGN, 1);
-        ShowFieldAutoScrollMessage((u8 *)gUnknown_081A4975);
-        gTasks[taskId].func = sub_80830E4;
-    }
-#endif
 }
 
 static void sub_80830E4(u8 taskId)
@@ -493,19 +474,10 @@ static void sub_8083314(u8 taskId)
 
     if (gSpecialVar_Result == 1)
     {
-#if ENGLISH
         u16 linkType;
         linkType = gLinkType;
         // FIXME: sub_8082D4C doesn't take any arguments
         sub_8082D4C(0x4411, linkType);
-#elif GERMAN
-        if (gLinkType != 0x4411)
-        {
-            if (gLinkType == 0x6601)
-                deUnkValue2 = 1;
-        }
-        sub_8082D4C();
-#endif
         EnableBothScriptContexts();
         DestroyTask(taskId);
         return;

@@ -1,6 +1,6 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_HOBBIES_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_HOBBIES_WORDS
-#if ENGLISH
+
 u8 gEasyChatGroupWords_Hobbies[] = _(
                                      "IDOL$"
                                      "ANIME$"
@@ -57,62 +57,5 @@ u8 gEasyChatGroupWords_Hobbies[] = _(
                                      "VACATION$"
                                      "LOOK$"
                                      );
-#elif GERMAN
-u8 gEasyChatGroupWords_Hobbies[] = _(
-                                     "IDOL$"
-                                     "ANIME$"
-                                     "SONG$"
-                                     "FILM$"
-                                     "NASCHEN$"
-                                     "PLAUDERN$"
-                                     "KINDERSPIEL$"
-                                     "SPIELZEUG$"
-                                     "MUSIK$"
-                                     "KARTENSPIELE$"
-                                     "EINKAUFEN$"
-                                     "FOTOS$"
-                                     "BESICHTIGUNG$"
-                                     "ZUSCHAUER$"
-                                     "GOURMET$"
-                                     "SPIEL$"
-                                     "RPG$"
-                                     "SAMMLUNG$"
-                                     "KOMPLETT$"
-                                     "MAGAZIN$"
-                                     "SPAZIEREN$"
-                                     "FAHRRAD$"
-                                     "HOBBY$"
-                                     "SPORT$"
-                                     "SOFTWARE$"
-                                     "SONGS$"
-                                     "NAHRUNG$"
-                                     "KOSTBARKEIT$"
-                                     "REISEN$"
-                                     "TANZEN$"
-                                     "WASSERSPORT$"
-                                     "HERSTELLUNG$"
-                                     "ANGELN$"
-                                     "VERABREDUNG$"
-                                     "DESIGN$"
-                                     "LOKOMOTIVEN$"
-                                     "PLÜSCHPUPPEN$"
-                                     "PC$"
-                                     "BLUMEN$"
-                                     "HELD$"
-                                     "NICKERCHEN$"
-                                     "HELDIN$"
-                                     "MODE$"
-                                     "ABENTEUER$"
-                                     "BRETTSPIELE$"
-                                     "BALL$"
-                                     "BÜCHER$"
-                                     "FESTIVALS$"
-                                     "COMICS$"
-                                     "FERIEN$"
-                                     "ETWAS PLANEN$"
-                                     "SCHICKIMICKI$"
-                                     "URLAUB$"
-                                     "AUSSEHEN$"
-                                     );
-#endif // GAME_LANGUAGE
+
 #endif // DATA_TEXT_EASY_CHAT_GROUPS_HOBBIES_WORDS

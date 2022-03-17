@@ -231,11 +231,7 @@ static void PrintContestPaintingCaption(u8 contestType, u8 isForArtist)
     {
         ptr = StringCopy(ptr, sContestRankNames[type]);
         ptr = StringCopy(ptr, gContestText_ContestWinner);
-#if ENGLISH
         ptr = StringCopy(ptr, gContestPaintingWinner->trainerName);
-#elif GERMAN
-        ptr = StringCopy10(ptr, gContestPaintingWinner->nickname);
-#endif
 
         // {LATIN}
         ptr[0] = EXT_CTRL_CODE_BEGIN;
@@ -243,11 +239,7 @@ static void PrintContestPaintingCaption(u8 contestType, u8 isForArtist)
         ptr += 2;
 
         ptr = StringCopy(ptr, gOtherText_Unknown1);
-#if ENGLISH
         ptr = StringCopy10(ptr, gContestPaintingWinner->nickname);
-#elif GERMAN
-        ptr = StringCopy(ptr, gContestPaintingWinner->trainerName);
-#endif
 
         xPos = 6;
         yPos = 14;

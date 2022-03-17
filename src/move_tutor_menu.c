@@ -32,10 +32,6 @@ extern const u8 *const gMoveDescriptions[];
 extern const u8 gTypeNames[][7];
 extern const u8 *const gContestCategoryNames[];
 
-#ifdef GERMAN
-extern const u8 deuOtherText_ForgotAndLearned[];
-#endif
-
 static void InitMoveTutorMenuWaitFade(u8);
 static void CB2_InitMoveTutorMenu(void);
 static void CB2_MoveTutorMenu(void);
@@ -596,11 +592,7 @@ static void MoveTutorMain(void)
     case 30:
         if (Menu_UpdateWindowText())
         {
-#ifdef GERMAN
-            PrintMainMoveTutorMenuText(deuOtherText_ForgotAndLearned);
-#else
             PrintMainMoveTutorMenuText(gOtherText_ForgotOrDidNotLearnMove);
-#endif
             sMoveTutorMenu->state = 31;
             PlayFanfare(MUS_LEVEL_UP);
         }

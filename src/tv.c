@@ -1769,7 +1769,6 @@ void InterviewBefore_BravoTrainerBTProfile(void)
     }
 }
 
-#if ENGLISH
 u8 NicknameDiffersFromSpeciesName(u8 monIndex)
 {
     u32 species;
@@ -1781,27 +1780,6 @@ u8 NicknameDiffersFromSpeciesName(u8 monIndex)
 
     return TRUE;
 }
-#elif GERMAN
-u8 NicknameDiffersFromSpeciesName(u8 pmMonIndex)
-{
-    u8 langData[4];
-    u32 species;
-    u8 *tmp;
-
-    GetMonData(&gPlayerParty[pmMonIndex], MON_DATA_NICKNAME, &gStringVar1);
-
-    tmp = langData;
-    tmp[0] = GetMonData(&gPlayerParty[pmMonIndex], MON_DATA_LANGUAGE, &langData);
-    if (tmp[0] != GAME_LANGUAGE)
-        return TRUE;
-
-    species = GetMonData(&gPlayerParty[pmMonIndex], MON_DATA_SPECIES, NULL);
-    if (StringCompareWithoutExtCtrlCodes(gSpeciesNames[species], gStringVar1))
-        return TRUE;
-
-    return FALSE;
-}
-#endif
 
 u8 LeadMonNicknamed(void)
 {

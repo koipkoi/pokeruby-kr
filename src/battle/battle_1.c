@@ -454,17 +454,9 @@ const u8 gEnemyMonElevation[] = {
 };
 
 #include "../data/trainer_parties.h"
-
-#if ENGLISH
-#include "../data/text/trainer_class_names_en.h"
-#include "../data/trainers_en.h"
-#include "../data/text/species_names_en.h"
-#include "../data/text/move_names_en.h"
-#elif GERMAN
-#include "../data/text/trainer_class_names_de.h"
-#include "../data/trainers_de.h"
-#include "../data/text/species_names_de.h"
-#include "../data/text/move_names_de.h"
-#endif
+#include "../data/text/trainer_class_names.h"
+#include "../data/trainers.h"
+#include "../data/text/species_names.h"
+#include "../data/text/move_names.h"
 
 const u32 gUnknown_81F9528 = 0x101;

@@ -39,11 +39,7 @@
 #include "constants/species.h"
 #include "constants/weather.h"
 
-#if ENGLISH
 #define CHAR_DECIMAL_SEPARATOR CHAR_PERIOD
-#elif GERMAN
-#define CHAR_DECIMAL_SEPARATOR CHAR_COMMA
-#endif
 
 extern struct WarpData gLastUsedWarp;
 extern u8 gBattleOutcome;

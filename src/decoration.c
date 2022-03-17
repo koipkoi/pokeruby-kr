@@ -44,7 +44,6 @@ EWRAM_DATA struct OamData gUnknown_020391AC = {0};
 EWRAM_DATA struct UnkStruct_020391B4 gUnknown_020391B4[16] = {0};
 EWRAM_DATA u8 gUnknown_02039234 = 0;
 
-#if ENGLISH
 const u8 DecorDesc_SMALL_DESK[] = _(
     "A small desk built\n"
     "for one.");
@@ -622,9 +621,6 @@ const u8 DecorDesc_REGISTEEL_DOLL[] = _(
     "A large doll.\n"
     "Place it on a mat\n"
     "or a desk.");
-#elif GERMAN
-#include "data/decoration/descriptions_de.h"
-#endif
 
 const u16 DecorGfx_SMALL_DESK[] = {
     0x87
@@ -1268,7 +1264,6 @@ const u16 DecorGfx_REGISTEEL_DOLL[] = {
     OBJ_EVENT_GFX_BIG_REGISTEEL_DOLL
 };
 
-#if ENGLISH
 const struct Decoration gDecorations[] = {
     {DECOR_NONE,            _("SMALL DESK"),      DECORPERM_SOLID_FLOOR,  DECORSHAPE_1x1, DECORCAT_DESK,         0, DecorDesc_SMALL_DESK, DecorGfx_SMALL_DESK},
     {DECOR_SMALL_DESK,      _("SMALL DESK"),      DECORPERM_SOLID_FLOOR,  DECORSHAPE_1x1, DECORCAT_DESK,      3000, DecorDesc_SMALL_DESK, DecorGfx_SMALL_DESK},
@@ -1392,9 +1387,6 @@ const struct Decoration gDecorations[] = {
     {DECOR_REGICE_DOLL,     _("REGICE DOLL"),      DECORPERM_SOLID_MAT,   DECORSHAPE_1x2, DECORCAT_DOLL,     10000, DecorDesc_REGICE_DOLL, DecorGfx_REGICE_DOLL},
     {DECOR_REGISTEEL_DOLL,  _("REGISTEEL DOLL"),   DECORPERM_SOLID_MAT,   DECORSHAPE_1x2, DECORCAT_DOLL,     10000, DecorDesc_REGISTEEL_DOLL, DecorGfx_REGISTEEL_DOLL}
 };
-#elif GERMAN
-#include "data/decoration/decorations.h"
-#endif
 
 const u8 *const gUnknown_083EC5E4[] = {
     SecretBaseText_Desk,
@@ -1685,14 +1677,7 @@ void sub_80FE7EC(u8 taskId)
     sub_80FEC94(taskId);
     sub_80FECB8(gUnknown_020388F6);
 
-#if ENGLISH
     Menu_DrawStdWindowFrame(15, 12, 29, 19);
-#elif GERMAN
-    if ((gUnknown_020388F2 + gUnknown_020388F4) != gUnknown_020388D5)
-    {
-        Menu_DrawStdWindowFrame(15, 12, 29, 19);
-    }
-#endif
 
     sub_80FECE0(gUnknown_020388F2 + gUnknown_020388F4);
     InitMenu(0, 1, 2, gUnknown_020388F3 + 1, gUnknown_020388F2, 13);
@@ -1851,21 +1836,10 @@ void sub_80FECB8(u8 decoCat)
     sub_80FE470(decoCat, 16, 1, 0xff);
 }
 
-#if ENGLISH
 void sub_80FECE0(u8 decoCat)
 {
     sub_8072AB0(gDecorations[gUnknown_020388D0[decoCat]].description, 0x80, 0x68, 0x68, 0x30, 0x1);
 }
-#elif GERMAN
-int sub_80FECE0(u8 decoCat)
-{
-    if (decoCat == gUnknown_020388D5)
-        return FALSE;
-
-    sub_8072AB0(gDecorations[gUnknown_020388D0[decoCat]].description, 0x80, 0x68, 0x68, 0x30, 0x1);
-    return TRUE;
-}
-#endif
 
 void sub_80FED1C(void)
 {

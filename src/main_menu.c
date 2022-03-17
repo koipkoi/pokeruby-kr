@@ -693,17 +693,10 @@ void PrintPlayTime(void)
     u8 playTime[16];
     u8 alignedPlayTime[32];
 
-#if defined(ENGLISH)
     Menu_PrintText(gMainMenuString_Time, 16, 3);
     FormatPlayTime(playTime, gSaveBlock2.playTimeHours, gSaveBlock2.playTimeMinutes, 1);
     AlignStringInMenuWindow(alignedPlayTime, playTime, 48, 1);
     Menu_PrintText(alignedPlayTime, 22, 3);
-#elif defined(GERMAN)
-    Menu_PrintTextPixelCoords(gMainMenuString_Time, 124, 24, TRUE);
-    FormatPlayTime(playTime, gSaveBlock2.playTimeHours, gSaveBlock2.playTimeMinutes, 1);
-    AlignStringInMenuWindow(alignedPlayTime, playTime, 40, 1);
-    Menu_PrintText(alignedPlayTime, 23, 3);
-#endif
 }
 
 void PrintPokedexCount(void)
@@ -719,11 +712,7 @@ void PrintBadgeCount(void)
 {
     u8 buffer[16];
 
-#if defined(ENGLISH)
     Menu_PrintText(gMainMenuString_Badges, 16, 5);
-#elif defined(GERMAN)
-    Menu_PrintTextPixelCoords(gMainMenuString_Badges, 124, 40, TRUE);
-#endif
     ConvertIntToDecimalString(buffer, GetBadgeCount());
     Menu_PrintTextPixelCoords(buffer, 205, 40, 1);
 }

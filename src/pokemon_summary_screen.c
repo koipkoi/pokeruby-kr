@@ -154,13 +154,8 @@ extern const u8 gUnknown_08E73E88[];
 EWRAM_DATA u8 gUnknown_020384F0 = 0;
 EWRAM_DATA struct Sprite *gUnknown_020384F4 = NULL;
 
-#if ENGLISH
-#include "data/text/move_descriptions_en.h"
-#include "data/text/nature_names_en.h"
-#elif GERMAN
-#include "data/text/move_descriptions_de.h"
-#include "data/text/nature_names_de.h"
-#endif
+#include "data/text/move_descriptions.h"
+#include "data/text/nature_names.h"
 
 static const u8 * const sPageHeaderTexts[] = {
     gEmptyString_81E72B0,
@@ -498,13 +493,7 @@ static const struct SpriteTemplate sSpriteTemplate_StatusCondition =
 };
 
 static const u16 sSummaryScreenMonMarkingsPalette[] = INCBIN_U16("graphics/summary_screen/mon_markings.gbapal");
-
-#if ENGLISH
 static const u16 gSummaryScreenTextTiles[] = INCBIN_U16("graphics/summary_screen/text.4bpp");
-#elif GERMAN
-extern const u16 gSummaryScreenTextTiles[];
-#endif
-
 static const u16 sSummaryScreenButtonTiles[] = INCBIN_U16("graphics/summary_screen/buttons.4bpp");
 
 static const u16 sUnknown_083C157C[] = { RGB(26, 26, 23) };
@@ -2546,16 +2535,10 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
     u8 *ptr = gStringVar4;
     u8 nature = GetNature(mon);
 
-#if ENGLISH
     ptr = SummaryScreen_CopyColoredString(ptr, gNatureNames[nature], 14);
     if (nature != NATURE_BOLD && nature != NATURE_GENTLE)
         ptr = StringCopy(ptr, gOtherText_Terminator4);
     ptr = StringCopy(ptr, gOtherText_Nature);
-#elif GERMAN
-    ptr = StringCopy(gStringVar4, gOtherText_Nature);
-    ptr = SummaryScreen_CopyColoredString(ptr, gNatureNames[nature], 14);
-    ptr = StringCopy(ptr, gOtherText_Terminator4);
-#endif
 
     if (PokemonSummaryScreen_CheckOT(mon) == TRUE)
     {

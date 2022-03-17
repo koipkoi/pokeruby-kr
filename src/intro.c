@@ -46,11 +46,7 @@ struct GcmbStruct gMultibootProgramStruct;
 
 static const u16 Palette_406340[] = INCBIN_U16("graphics/intro/unknown1.gbapal");
 static const u16 Palette_406360[] = INCBIN_U16("graphics/intro/unknown2.gbapal");
-#if ENGLISH
 static const u8 gIntroTiles[] = INCBIN_U8("graphics/intro/intro.4bpp.lz");
-#elif GERMAN
-extern const u8 gIntroTiles[];
-#endif
 static const u16 gIntro1BGPals[][16] =
 {
     INCBIN_U16("graphics/intro/intro1_bgpal1.gbapal"),
@@ -295,13 +291,6 @@ static const union AnimCmd gSpriteAnim_840AF10[] =
     ANIMCMD_FRAME(128, 8),
     ANIMCMD_END,
 };
-#if GERMAN
-static const union AnimCmd gSpriteAnim_8416DA4[] =
-{
-    ANIMCMD_FRAME(118, 8),
-    ANIMCMD_END,
-};
-#endif
 static const union AnimCmd *const gSpriteAnimTable_840AF18[] =
 {
     gSpriteAnim_840AEA8,
@@ -320,9 +309,6 @@ static const union AnimCmd *const gSpriteAnimTable_840AF34[] =
     gSpriteAnim_840AEF8,
     gSpriteAnim_840AF00,
     gSpriteAnim_840AF08,
-#if GERMAN
-    gSpriteAnim_8416DA4,
-#endif
 };
 static const union AnimCmd *const gSpriteAnimTable_840AF4C[] =
 {

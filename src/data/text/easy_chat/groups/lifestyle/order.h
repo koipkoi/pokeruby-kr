@@ -1,7 +1,6 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_LIFESTYLE_ORDER
 #define DATA_TEXT_EASY_CHAT_GROUPS_LIFESTYLE_ORDER
 
-#if ENGLISH
 u16 gEasyChatGroupOrder_Lifestyle[] = {
     3,
     4,
@@ -49,54 +48,5 @@ u16 gEasyChatGroupOrder_Lifestyle[] = {
     13,
     44,
 };
-#elif GERMAN
-u16 gEasyChatGroupOrder_Lifestyle[] = {
-    13,
-    4,
-    22,
-    24,
-    27,
-    7,
-    2,
-    23,
-    5,
-    8,
-    9,
-    1,
-    18,
-    29,
-    26,
-    40,
-    11,
-    41,
-    19,
-    20,
-    16,
-    34,
-    35,
-    43,
-    37,
-    30,
-    31,
-    33,
-    0,
-    32,
-    36,
-    42,
-    6,
-    12,
-    14,
-    3,
-    28,
-    25,
-    15,
-    39,
-    21,
-    17,
-    38,
-    44,
-    10,
-};
-#endif // GAME_LANGUAGE
 
 #endif // DATA_TEXT_EASY_CHAT_GROUPS_LIFESTYLE_ORDER

@@ -9,7 +9,6 @@
 #include "constants/opponents.h"
 #include "constants/region_map_sections.h"
 #include "text.h"
-#include "de_rom_8040FE0.h"
 #include "string_util.h"
 
 struct TrainersEyeGymLeadersAndE4
@@ -174,12 +173,7 @@ void sub_80F700C(u8 *arg0, u16 arg1)
     ptr = arg0;
     if (arg1 < gPokenavStructPtr->unkD158)
     {
-#if ENGLISH
         ptr = StringCopy(ptr, gTrainerClassNames[trainer->trainerClass]);
-#elif GERMAN
-        ptr = StringCopy(ptr, de_sub_8041024(0, gPokenavStructPtr->trainersEye[arg1].opponentId));
-#endif
-
         ptr[0] = EXT_CTRL_CODE_BEGIN;
         ptr[1] = 0x13;
         ptr[2] = 0x4B;

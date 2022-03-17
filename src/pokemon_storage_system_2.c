@@ -1848,11 +1848,7 @@ void PrintStorageActionText(u8 index)
     case PC_TEXT_FMT_MON_NAME_2:
         // {var} + " was released."
         ptr = StringCopy(gPokemonStorageSystemPtr->unk_2694, gPokemonStorageSystemPtr->unk_26e4);
-#if ENGLISH
         ptr = StringCopy(ptr, gPCStorageActionTexts[index].text);
-#elif GERMAN
-        ptr = de_sub_8073174(gPokemonStorageSystemPtr->unk_2694, gPCStorageActionTexts[index].text);
-#endif
         break;
     case PC_TEXT_FMT_UNK_03:
         {

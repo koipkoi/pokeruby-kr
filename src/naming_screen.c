@@ -20,11 +20,7 @@
 #include "util.h"
 #include "ewram.h"
 
-#ifdef ENGLISH
 #define COLUMN_COUNT 9
-#elif GERMAN
-#define COLUMN_COUNT 10
-#endif
 
 const u8 gSpriteImage_83CE094[] = INCBIN_U8("graphics/naming_screen/pc_icon/0.4bpp");
 const u8 gSpriteImage_83CE154[] = INCBIN_U8("graphics/naming_screen/pc_icon/1.4bpp");
@@ -450,13 +446,8 @@ static bool8 MainState_WaitPageSwap(struct Task *task)
         sub_80B77F8();
         SetInputState(INPUT_STATE_ENABLED);
         GetCursorPos(&cursorX, &cursorY);
-#if ENGLISH
         if (namingScreenDataPtr->currentPage == PAGE_OTHERS && (cursorX == 6 || cursorX == 7))
             cursorX = 5;
-#elif GERMAN
-        if (namingScreenDataPtr->currentPage == PAGE_OTHERS && (cursorX == 7 || cursorX == 8))
-            cursorX = 6;
-#endif
         SetCursorPos(cursorX, cursorY);
         sub_80B6888(0);
     }
@@ -741,11 +732,7 @@ static void HandleDpadMovement(struct Task *task)
     if (sDpadDeltaX[dpadDir] != 0)
     {
         //The "others" page only has 5 columns
-#if ENGLISH
         if (namingScreenDataPtr->currentPage == PAGE_OTHERS && (cursorX == 6 || cursorX == 7))
-#elif GERMAN
-        if (namingScreenDataPtr->currentPage == PAGE_OTHERS && (cursorX == 6 || cursorX == 7 || cursorX == 8))
-#endif
         {
             if (sDpadDeltaX[dpadDir] > 0)
                 cursorX = COLUMN_COUNT - 1;
@@ -995,15 +982,9 @@ static void CursorInit(void)
 }
 
 static const u8 sKeyboardSymbolPositions[][COLUMN_COUNT] = {
-#if ENGLISH
     {1,  3,  5,  8, 10, 12, 14, 17, 19},  //Upper page
     {1,  3,  5,  8, 10, 12, 14, 17, 19},  //Lower page
     {1,  4,  7, 10, 13, 16, 16, 16, 19},  //Others page
-#elif GERMAN
-    {2, 3, 4, 5,  9,  10, 11, 12, 16, 19},  //Upper page
-    {2, 3, 4, 5,  9,  10, 11, 12, 16, 19},  //Lower page
-    {1, 4, 7, 10, 13, 16, 16, 16, 16, 19},  //Others page
-#endif
 };
 
 static u8 CursorColToKeyboardCol(s16 x)
@@ -1908,7 +1889,6 @@ static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
 
 static const u8 sKeyboardCharacters[][4][20] =
 {
-#if ENGLISH
     {
         _(" A B C  D E F    . "),
         _(" G H I  J K L    , "),
@@ -1921,20 +1901,6 @@ static const u8 sKeyboardCharacters[][4][20] =
         _(" m n o  p q r s    "),
         _(" t u v  w x y z    "),
     },
-#elif GERMAN
-    {
-        _("  ABCD   EFGH   .  "),
-        _("  IJKL   MNOP   ,  "),
-        _("  QRST   UVWX      "),
-        _("  YZ     ÄÖÜ       "),
-    },
-    {
-        _("  abcd   efgh   .  "),
-        _("  ijkl   mnop   ,  "),
-        _("  qrst   uvwx      "),
-        _("  yz     äöü       "),
-    },
-#endif
     {
         _(" 0  1  2  3  4     "),
         _(" 5  6  7  8  9     "),

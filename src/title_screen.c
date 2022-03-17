@@ -16,7 +16,6 @@
 #include "task.h"
 #include "scanline_effect.h"
 
-#if ENGLISH
 #define VERSION_BANNER_SHAPE 1
 #define VERSION_BANNER_RIGHT_TILEOFFSET 64
 #define VERSION_BANNER_BYTES 0x1000
@@ -25,20 +24,6 @@
 #define VERSION_BANNER_Y 26
 #define VERSION_BANNER_Y_GOAL 66
 #define START_BANNER_X DISPLAY_WIDTH / 2
-#elif GERMAN
-#define VERSION_BANNER_SHAPE 0
-#define VERSION_BANNER_RIGHT_TILEOFFSET 128
-#define VERSION_BANNER_BYTES 0x2000
-#define VERSION_BANNER_LEFT_X 108
-#define VERSION_BANNER_RIGHT_X 172
-#ifdef SAPPHIRE
-#define VERSION_BANNER_Y_GOAL 83
-#else
-#define VERSION_BANNER_Y_GOAL 84
-#endif
-#define VERSION_BANNER_Y (VERSION_BANNER_Y_GOAL - 40)
-#define START_BANNER_X DISPLAY_WIDTH / 2 - 2
-#endif
 
 extern u8 gReservedSpritePaletteCount;
 extern struct MusicPlayerInfo gMPlayInfo_BGM;
@@ -239,18 +224,6 @@ static const union AnimCmd gSpriteAnim_8393F4C[] =
     ANIMCMD_FRAME(28, 4),
     ANIMCMD_END,
 };
-#if GERMAN
-static const union AnimCmd gSpriteAnim_839F73C[] =
-{
-    ANIMCMD_FRAME(32, 4),
-    ANIMCMD_END,
-};
-static const union AnimCmd gSpriteAnim_839F744[] =
-{
-    ANIMCMD_FRAME(36, 4),
-    ANIMCMD_END,
-};
-#endif
 static const union AnimCmd *const sStartCopyrightBannerAnimTable[] =
 {
     gSpriteAnim_8393F14,
@@ -261,10 +234,6 @@ static const union AnimCmd *const sStartCopyrightBannerAnimTable[] =
     gSpriteAnim_8393F3C,
     gSpriteAnim_8393F44,
     gSpriteAnim_8393F4C,
-#if GERMAN
-    gSpriteAnim_839F73C,
-    gSpriteAnim_839F744,
-#endif
 };
 static const struct SpriteTemplate sStartCopyrightBannerSpriteTemplate =
 {
@@ -337,9 +306,7 @@ static const struct CompressedSpriteSheet sPokemonLogoShineSpriteSheet[] =
 #define LEGENDARY_MARKING_COLOR(c) RGB(0, 0, (c))
 #endif
 
-#if defined(GERMAN) && defined(SAPPHIRE)
-#define PLTT_BUFFER_INDEX 9
-#elif defined(SAPPHIRE)
+#if defined(SAPPHIRE)
 #define PLTT_BUFFER_INDEX 26
 #else
 #define PLTT_BUFFER_INDEX 21
@@ -434,14 +401,6 @@ static void CreatePressStartBanner(s16 x, s16 y)
         StartSpriteAnim(&gSprites[spriteId], i);
         gSprites[spriteId].data[0] = 1;
     }
-#if GERMAN
-    spriteId = CreateSprite(&sStartCopyrightBannerSpriteTemplate, x, y, 0);
-    StartSpriteAnim(&gSprites[spriteId], 8);
-    gSprites[spriteId].data[0] = 1;
-    spriteId = CreateSprite(&sStartCopyrightBannerSpriteTemplate, x - 0x60, y - 0x8, 0);
-    StartSpriteAnim(&gSprites[spriteId], 9);
-    gSprites[spriteId].data[0] = 1;
-#endif
 }
 
 static void CreateCopyrightBanner(s16 x, s16 y)

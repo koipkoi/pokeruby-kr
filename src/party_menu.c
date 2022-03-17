@@ -471,13 +471,8 @@ extern const u8 gPartyMenuOrderText_Gfx[];
 extern const u8 gStatusGfx_Icons[];
 extern const u8 gStatusPal_Icons[];
 
-#if ENGLISH
 #define WINDOW_LEFT (3)
 #define WINDOW_RIGHT (26)
-#elif GERMAN
-#define WINDOW_LEFT (0)
-#define WINDOW_RIGHT (29)
-#endif
 
 void CB2_PartyMenuMain(void)
 {
@@ -4074,9 +4069,6 @@ void PrintStatGrowthsInLevelUpWindow(u8 taskId)
         u8 x;
         u8 y;
         u32 stat;
-#if GERMAN
-        u8 *ptr;
-#endif
 
         stat = GetMonData(gPartyMenu.pokemon, StatDataTypes[i]);
 
@@ -4086,18 +4078,6 @@ void PrintStatGrowthsInLevelUpWindow(u8 taskId)
         x = (i / 3) * 9 + 11;
         y = ((i % 3) << 1) + 1;
 
-#if GERMAN
-        ptr = StringCopy(gStringVar1, StatNames[i]);
-        *ptr++ = EXT_CTRL_CODE_BEGIN;
-        *ptr++ = 0x13;
-        *ptr++ = 0x2E;
-        ptr = StringCopy(ptr, gOtherText_TallPlusAndRightArrow);
-        *ptr++ = EXT_CTRL_CODE_BEGIN;
-        *ptr++ = 0x13;
-        *ptr++ = 0x34;
-        ConvertIntToDecimalStringN(ptr, ePartyMenu2.pmStatGrowths[i], 1, 2);
-        Menu_PrintText(gStringVar1, x + 1, y);
-#else
         Menu_PrintTextPixelCoords(StatNames[i], (x + 1) * 8, y * 8, 1);
         if (i == 2)
             Menu_PrintTextPixelCoords(gOtherText_TallPlusAndRightArrow, (x + 6) * 8 + 6, y * 8, 0);
@@ -4108,7 +4088,6 @@ void PrintStatGrowthsInLevelUpWindow(u8 taskId)
         gStringVar1[2] = 0x06;
         ConvertIntToDecimalStringN(gStringVar1 + 3, ePartyMenu2.pmStatGrowths[i], 1, 2);
         Menu_PrintTextPixelCoords(gStringVar1, (x + 6) * 8 + 12, y * 8, 0);
-#endif
     }
 }
 

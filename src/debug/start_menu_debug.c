@@ -2744,9 +2744,6 @@ u8 DebugMenu_OpenMurakawa(void)
 
 #if !(ENGLISH && REVISION == 0)
 const u8 Str_839C61A[] = _(
-#if GERMAN
-    "abcde;　abcde:　ABCDE;　ABCDE:\p"
-#endif
     "Tableaux　des　verbes　du　2{SUPER_E}　groupe.\p"
     "La1{SUPER_RE}　chose　à apprendre　c'est　de　lire.\p"
     "Tableaux　des　verbes　du　1{SUPER_ER}　groupe.\p"

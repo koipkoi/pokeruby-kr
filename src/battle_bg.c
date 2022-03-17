@@ -429,15 +429,9 @@ static void sub_800DAF8(u8 taskId, u8 windowId, u8 *dest)
 }
 
 
-#if ENGLISH
 #define LEFT_MESSAGE_X 6
 #define RIGHT_MESSAGE_X 21
 #define TILE_OFFSET_LOSS 168
-#elif GERMAN
-#define LEFT_MESSAGE_X 5
-#define RIGHT_MESSAGE_X 20
-#define TILE_OFFSET_LOSS 172
-#endif
 #define TILE_OFFSET_WIN 160
 #define CENTER_MESSAGE_X 13
 #define MESSAGE_Y 2

@@ -1408,7 +1408,6 @@ void sub_80C3764(void)
     REG_WININ = WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN0_CLR  | WININ_WIN1_BG_ALL | WININ_WIN1_OBJ | WININ_WIN1_CLR;
 }
 
-#ifdef ENGLISH
 #ifdef NONMATCHING
 static inline s32 de_sub_80C39A8(s32 a0)
 {
@@ -1700,87 +1699,6 @@ void sub_80C37E4(void)
                 "_080C398C: .4byte 0x00000fff");
 }
 #endif // NONMATCHING
-
-#elif defined(GERMAN)
-s16 de_sub_80C39A8(s32 a0)
-{
-    s16 result;
-    if (gIsLinkContest & 1)
-    {
-        sub_809D104((void *)(VRAM + 0xE000), a0, 0, gUnknown_08E964B8, 11, 3, 8, 3);
-        result = 8;
-    }
-    else if (gSpecialVar_ContestRank == 0)
-    {
-        sub_809D104((void *)(VRAM + 0xE000), a0, 0, gUnknown_08E964B8, 0, 0, 11, 3);
-        result = 11;
-    }
-    else if (gSpecialVar_ContestRank == 1)
-    {
-        sub_809D104((void *)(VRAM + 0xE000), a0, 0, gUnknown_08E964B8, 11, 0, 10, 3);
-        result = 10;
-    }
-    else if (gSpecialVar_ContestRank == 2)
-    {
-        sub_809D104((void *)(VRAM + 0xE000), a0, 0, gUnknown_08E964B8, 21, 0, 10, 3);
-        result = 10;
-    }
-    else
-    {
-        sub_809D104((void *)(VRAM + 0xE000), a0, 0, gUnknown_08E964B8, 0, 3, 11, 3);
-        result = 11;
-    }
-    return result;
-}
-
-s16 de_sub_80C3A84(s32 a0, s32 * a1)
-{
-    s16 result;
-    if (gSpecialVar_ContestCategory == 0)
-    {
-        *a1 = 0;
-        sub_809D104((void *)(VRAM + 0xE000), a0, 0, gUnknown_08E964B8, 19, 3, 7, 3);
-        result = 7;
-    }
-    else if (gSpecialVar_ContestCategory == 1)
-    {
-        *a1 = 1;
-        sub_809D104((void *)(VRAM + 0xE000), a0, 0, gUnknown_08E964B8, 0, 6, 7, 3);
-        result = 7;
-    }
-    else if (gSpecialVar_ContestCategory == 2)
-    {
-        *a1 = 2;
-        sub_809D104((void *)(VRAM + 0xE000), a0, 0, gUnknown_08E964B8, 7, 6, 4, 3);
-        result = 4;
-    }
-    else if (gSpecialVar_ContestCategory == 3)
-    {
-        *a1 = 3;
-        sub_809D104((void *)(VRAM + 0xE000), a0, 0, gUnknown_08E964B8, 11, 6, 6, 3);
-        result = 6;
-    }
-    else
-    {
-        *a1 = 4;
-        sub_809D104((void *)(VRAM + 0xE000), a0, 0, gUnknown_08E964B8, 17, 6, 5, 3);
-        result = 5;
-    }
-    return result;
-}
-
-void sub_80C37E4(void)
-{
-    s32 sp0;
-    s32 i;
-    de_sub_80C3A84(de_sub_80C39A8(6) + 6, &sp0);
-    for (i = 0; i < 0x80; i++)
-    {
-        ((vu16 *)(VRAM + 0xE000))[i] &= 0xFFF;
-        ((vu16 *)(VRAM + 0xE000))[i] |= sp0 << 12;;
-    }
-}
-#endif
 
 // fakematching?
 u8 sub_80C3990(u8 monIndex, u8 arg1)

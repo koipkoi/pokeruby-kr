@@ -30,11 +30,7 @@ struct MovePpInfo
     u8 ppBonuses;
 };
 
-#if ENGLISH
 #define SUB_803037C_TILE_DATA_OFFSET 440
-#elif GERMAN
-#define SUB_803037C_TILE_DATA_OFFSET 444
-#endif
 
 extern struct Window gWindowTemplate_Contest_MoveDescription;
 

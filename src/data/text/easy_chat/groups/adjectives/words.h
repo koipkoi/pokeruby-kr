@@ -1,6 +1,6 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_ADJECTIVES_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_ADJECTIVES_WORDS
-#if ENGLISH
+
 u8 gEasyChatGroupWords_Adjectives[] = _(
                                         "WANDERING$"
                                         "RICKETY$"
@@ -39,44 +39,5 @@ u8 gEasyChatGroupWords_Adjectives[] = _(
                                         "HAPPILY$"
                                         "ANTICIPATION$"
                                         );
-#elif GERMAN
-u8 gEasyChatGroupWords_Adjectives[] = _(
-                                        "LATSCH$"
-                                        "WACKEL$"
-                                        "STEINHART$"
-                                        "MAGENKNURR$"
-                                        "KNURSCHP$"
-                                        "KILLE KILLE$"
-                                        "SCHLEUDER$"
-                                        "WIRBEL$"
-                                        "LECHZ$"
-                                        "LÜMMEL RÄKEL$"
-                                        "WUSCHEL$"
-                                        "SCHNÜFF$"
-                                        "OOCH$"
-                                        "MÜLL$"
-                                        "SABBER$"
-                                        "JIPP! JIPP!$"
-                                        "SCHWABBEL$"
-                                        "GLATT$"
-                                        "GLIBBER$"
-                                        "KLAPPER$"
-                                        "SCHEPPER$"
-                                        "MAMPF FRESS$"
-                                        "SCHMEISS$"
-                                        "IRRE$"
-                                        "ANGST BIBBER$"
-                                        "ZITTER$"
-                                        "SCHÜTTEL$"
-                                        "RATSCH$"
-                                        "FETZ$"
-                                        "WURGS$"
-                                        "NÖÖÖ$"
-                                        "RUMMS BERST$"
-                                        "ZISCH FACKEL$"
-                                        "SCHNUCKELIG$"
-                                        "MEGAGRINS$"
-                                        "GRINS HOFF$"
-                                        );
-#endif // GAME_LANGUAGE
+
 #endif // DATA_TEXT_EASY_CHAT_GROUPS_ADJECTIVES_WORDS

@@ -771,11 +771,7 @@ void sub_8043F44(u8 a)
     sub_8043E50(gHealthboxSpriteIds[a], x, y);
 }
 
-#if ENGLISH
 #define CHAR_LV_SEPARATOR CHAR_COLON
-#elif GERMAN
-#define CHAR_LV_SEPARATOR CHAR_PERIOD
-#endif
 
 /*static*/ void sub_8043FC0(u8 a, u8 b)
 {

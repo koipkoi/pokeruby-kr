@@ -176,9 +176,6 @@ u8 sub_80A7DEC(u8 berryId, u8 x, u8 y, bool8 animate);
 void MenuCursor_SetPos814A880(u8 a1, u8 a2);
 u8 MenuCursor_Create814A5C0(u8 a1, u16 a2, u8 a3, u16 a4, u8 a5);
 s8 GetFirstFreePokeblockSlot(void);
-#ifdef GERMAN
-extern void de_sub_8073110();
-#endif
 
 extern struct MusicPlayerInfo gMPlayInfo_SE2;
 extern struct MusicPlayerInfo gMPlayInfo_BGM;
@@ -303,15 +300,9 @@ static const u8 sUnknown2PString[4] = _("2P");
 static const u8 sUnknown3PString[4] = _("3P");
 static const u8 sUnknown4PString[4] = _("4P");
 
-#ifdef ENGLISH
 static const u8 sBlenderOpponentName1[] = _("MISTER");
 static const u8 sBlenderOpponentName2[] = _("LADDIE");
 static const u8 sBlenderOpponentName3[] = _("LASSIE");
-#else // GERMAN
-static const u8 sBlenderOpponentName1[] = _("OPI");
-static const u8 sBlenderOpponentName2[] = _("KUMPEL");
-static const u8 sBlenderOpponentName3[] = _("TUSSI");
-#endif // ENGLISH
 static const u8* const sBlenderOpponentsNames[] =
 {
     sBlenderOpponentName1, sBlenderOpponentName2, sBlenderOpponentName3
