@@ -1,5 +1,5 @@
 UnknownString_81B4F03: @ 81B4F03
-	.string "{PLAYER}'s BLUE ORB suddenly began\n"
+	.string "{PLAYER}'s BLUE ORC suddenly began\n"
 	.string "glowing!$"
 
 UnknownString_81B4F29: @ 81B4F29
